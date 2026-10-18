@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="embedding-based-factory-game"
+run/main_scene="uid://bk548lac7nrui"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -18,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 
@@ -28,3 +33,11 @@ window/stretch/aspect="expand"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.047058824, 0.047058824, 0.047058824, 1)
+
+[shader_globals]
+
+mouse_world_position={
+"type": "vec2",
+"value": Vector2(0, 0)
+}
