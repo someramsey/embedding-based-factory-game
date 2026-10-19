@@ -1,3 +1,5 @@
+//TODO: make borders abide by the world pos of the node
+
 shader_type canvas_item;
 render_mode world_vertex_coords;
 
