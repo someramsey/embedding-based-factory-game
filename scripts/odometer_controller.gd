@@ -20,7 +20,6 @@ class Spring:
 
 	func _init(p_control: Control) -> void:
 		control = p_control
-		#target = control.position.y
 
 	func update(dt: float, stiffness_val: float, damping_val: float, max_spd: float) -> void:
 		var pos := control.position.y
@@ -45,8 +44,6 @@ func _ready() -> void:
 	_e2_spring = Spring.new(e2_strip)
 	_e3_spring = Spring.new(e3_strip)
 	
-	
-
 var moneh = 0;
 
 func _process(dt: float) -> void:

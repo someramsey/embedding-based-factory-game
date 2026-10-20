@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 295.831 104.05">
+  <defs>
+    <style>
+      .cls-1{fill:none;stroke:#3c3d3c;stroke-width:6;stroke-miterlimit:10}
+    </style>
+  </defs>
+  <title>Untitled-1</title>
+  <g id="Layer1">
+    <g id="Odometer">
+      <path id="Outer_Frame" data-name="Outer Frame" d="M19.112 4.093 L277.719 4.093 C285.341 4.093 291.52 10.272 291.52 17.895 L291.52 85.464 C291.52 93.086 285.341 99.266 277.719 99.266 L19.112 99.266 C11.49 99.266 5.311 93.086 5.311 85.464 L5.311 17.895 C5.311 10.272 11.49 4.093 19.112 4.093 Z" class="cls-1"/>
+      <path id="Inner_Frame" data-name="Inner Frame" d="M20.051 13.744 L276.577 13.744 C279.532 13.744 281.928 16.14 281.928 19.096 L281.928 84.914 C281.928 87.869 279.532 90.265 276.577 90.265 L20.051 90.265 C17.095 90.265 14.699 87.869 14.699 84.914 L14.699 19.096 C14.699 16.14 17.095 13.744 20.051 13.744 Z" class="cls-1"/>
+    </g>
+  </g>
+</svg>
