@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://datt36jw7ygl8"]
+
+[ext_resource type="Texture2D" uid="uid://j46v6dfby64a" path="res://sprites/peon.png" id="1_f5ihx"]
+
+[node name="Peon" type="Node2D" unique_id=1549220851]
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=169180633]
+position = Vector2(-4.0000305, 47)
+texture = ExtResource("1_f5ihx")
+region_enabled = true
+region_rect = Rect2(77, 220, 105, 27)
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1809580256]
+position = Vector2(-4.500002, -2.5000076)
+texture = ExtResource("1_f5ihx")
+region_enabled = true
+region_rect = Rect2(92, 108, 72, 98)
+
+[node name="Left Hand" type="Sprite2D" parent="Body" unique_id=1385898942]
+position = Vector2(-40.50003, -1.4999924)
+texture = ExtResource("1_f5ihx")
+region_enabled = true
+region_rect = Rect2(27, 138, 25, 58)
+
+[node name="Right Hand" type="Sprite2D" parent="Body" unique_id=336153462]
+position = Vector2(32.49997, -8.499992)
+texture = ExtResource("1_f5ihx")
+region_enabled = true
+region_rect = Rect2(200, 146, 28, 45)
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1319786182]
+position = Vector2(-9.0000305, -75)
+texture = ExtResource("1_f5ihx")
+region_enabled = true
+region_rect = Rect2(82, 11, 77, 70)

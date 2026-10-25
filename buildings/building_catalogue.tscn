@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dgwai6xb7phuj"]
+
+[ext_resource type="Script" uid="uid://dirpc2sfb555o" path="res://scripts/building_catalogue.gd" id="1_evx4a"]
+[ext_resource type="Script" uid="uid://b556u43sdukmc" path="res://scripts/building_def.gd" id="2_omblk"]
+[ext_resource type="Resource" uid="uid://bfbe12u336uo0" path="res://buildings/combiner.tres" id="3_4qw38"]
+
+[node name="Catalogue" type="Node" unique_id=1779900145]
+script = ExtResource("1_evx4a")
+buildings = Array[ExtResource("2_omblk")]([ExtResource("3_4qw38"), ExtResource("3_4qw38"), ExtResource("3_4qw38")])

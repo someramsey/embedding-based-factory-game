@@ -1,0 +1,32 @@
+[gd_resource type="Theme" format=3 uid="uid://kh2gmrlkrkd"]
+
+[ext_resource type="StyleBox" uid="uid://bl1khsylfxwxp" path="res://scenes/main/gui/theme/box.tres" id="1_2mlxa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mlxa"]
+bg_color = Color(0.81787604, 0.76302636, 0.68603, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.23753929, 0.23753911, 0.237539, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ata6t"]
+bg_color = Color(0.45841432, 0.39843646, 0.31811148, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.23753929, 0.23753911, 0.237539, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxFlat_2mlxa")
+Button/styles/normal = ExtResource("1_2mlxa")
+Button/styles/pressed = SubResource("StyleBoxFlat_ata6t")

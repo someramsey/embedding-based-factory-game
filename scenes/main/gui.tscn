@@ -1,0 +1,2209 @@
+[gd_scene format=3 uid="uid://rn2fgobx3v0o"]
+
+[ext_resource type="Texture2D" uid="uid://d2q85r52ssiym" path="res://scenes/main/gui/TopBar/Panel.svg" id="1_x6mrw"]
+[ext_resource type="Script" uid="uid://hxuon2yrcdm1" path="res://scenes/main/gui/TopBar/MoneyOdometer/odometer_controller.gd" id="2_x6mrw"]
+[ext_resource type="Script" uid="uid://b2vfrcexvw703" path="res://scripts/clip_width_container.gd" id="3_s4vy2"]
+[ext_resource type="LabelSettings" uid="uid://ba83fu2iknakt" path="res://scenes/main/gui/TopBar/MoneyOdometer/font/currency_label_major_settings.tres" id="4_aicx1"]
+[ext_resource type="LabelSettings" uid="uid://t31gupgmqgu8" path="res://scenes/main/gui/TopBar/MoneyOdometer/font/currency_label_cents_settings.tres" id="5_328dw"]
+[ext_resource type="Texture2D" uid="uid://blk32iksq6uvu" path="res://scenes/main/gui/TopBar/MoneyOdometer/Odometer-Frame.svg" id="6_x6mrw"]
+[ext_resource type="Texture2D" uid="uid://cyion70fntlvk" path="res://assets/globe.svg" id="7_wshag"]
+[ext_resource type="Script" uid="uid://dkw83ff624nt7" path="res://scripts/building_card_deck.gd" id="8_62fno"]
+[ext_resource type="Theme" uid="uid://kh2gmrlkrkd" path="res://scenes/main/gui/theme/global_theme.tres" id="8_s4vy2"]
+[ext_resource type="Texture2D" uid="uid://c808qq55rolet" path="res://assets/tool.png" id="9_aicx1"]
+[ext_resource type="PackedScene" uid="uid://3o7ulyio5a8h" path="res://scenes/main/gui/Card/card.tscn" id="9_x6mrw"]
+[ext_resource type="Texture2D" uid="uid://dqhlm56555tot" path="res://assets/cancel.png" id="10_aicx1"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1410748250]
+
+[node name="TopBar" type="TextureRect" parent="." unique_id=695276447]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -681.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 203.0
+grow_horizontal = 0
+texture = ExtResource("1_x6mrw")
+
+[node name="Contents" type="HBoxContainer" parent="TopBar" unique_id=655181063]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -636.0
+offset_top = 4.0
+offset_right = -199.0
+offset_bottom = 123.0
+grow_horizontal = 0
+
+[node name="Money Odometer" type="MarginContainer" parent="TopBar/Contents" unique_id=1158090319 node_paths=PackedStringArray("scalar_strip", "d1_strip", "d2_strip", "e1_strip", "e2_strip", "e3_strip")]
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_x6mrw")
+scalar_strip = NodePath("Content/HBoxContainer/Scalar Clip/Scalar Strip")
+d1_strip = NodePath("Content/HBoxContainer/D1 Clip/D1Strip")
+d2_strip = NodePath("Content/HBoxContainer/D2 Clip/D2Strip")
+e1_strip = NodePath("Content/HBoxContainer/E1 Clip/E1Strip")
+e2_strip = NodePath("Content/HBoxContainer/E2 Clip/E2Strip")
+e3_strip = NodePath("Content/HBoxContainer/E3 Clip/E3Strip")
+card_height = 72
+
+[node name="Content" type="MarginContainer" parent="TopBar/Contents/Money Odometer" unique_id=637172340]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Background" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content" unique_id=1234581181]
+layout_mode = 2
+color = Color(0.23529412, 0.23921569, 0.23529412, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopBar/Contents/Money Odometer/Content" unique_id=1311491387]
+propagate_maximum_size = false
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="E3 Clip" type="Container" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=162701771]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("3_s4vy2")
+metadata/_custom_type_script = "uid://b2vfrcexvw703"
+
+[node name="E3Strip" type="VBoxContainer" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip" unique_id=1563665300]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="BumperTop" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1424729576]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Card0" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=87929772]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card0" unique_id=70835220]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card0/Inner" unique_id=325237106]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card1" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1065162820]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card1" unique_id=1566271259]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card1/Inner" unique_id=370386930]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=956645275]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card2" unique_id=2088493486]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card2/Inner" unique_id=2139600769]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1510839618]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card3" unique_id=2040481230]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card3/Inner" unique_id=1208314651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card4" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1597361994]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card4" unique_id=613140194]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card4/Inner" unique_id=880086518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card5" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=2117350598]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card5" unique_id=1591861193]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card5/Inner" unique_id=1824549256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card6" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=408469961]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card6" unique_id=1586057438]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card6/Inner" unique_id=512758642]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card7" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1015334485]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card7" unique_id=1237498749]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card7/Inner" unique_id=1751092767]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "7"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card8" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1134047021]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card8" unique_id=1318630671]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card8/Inner" unique_id=1763480557]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card9" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=1439386570]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card9" unique_id=1704602031]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip/Card9/Inner" unique_id=37415931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BumperBottom" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E3 Clip/E3Strip" unique_id=915177400]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="E2 Clip" type="Container" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=1062869340]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("3_s4vy2")
+metadata/_custom_type_script = "uid://b2vfrcexvw703"
+
+[node name="E2Strip" type="VBoxContainer" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip" unique_id=825844224]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="BumperTop" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1564562038]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Card0" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1181705633]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card0" unique_id=173220747]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card0/Inner" unique_id=6248380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card1" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1345512625]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card1" unique_id=970665186]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card1/Inner" unique_id=552982530]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=2093118289]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card2" unique_id=1978280213]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card2/Inner" unique_id=1841607630]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=471218089]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card3" unique_id=2045882900]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card3/Inner" unique_id=1723466247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card4" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=155091240]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card4" unique_id=1894826897]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card4/Inner" unique_id=90766589]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card5" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=649379555]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card5" unique_id=263014975]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card5/Inner" unique_id=1858869717]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card6" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1031686072]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card6" unique_id=224975431]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card6/Inner" unique_id=1984364263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card7" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1139351054]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card7" unique_id=209973025]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card7/Inner" unique_id=104986608]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "7"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card8" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1810292956]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card8" unique_id=1954680433]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card8/Inner" unique_id=2001964479]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card9" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=491122544]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card9" unique_id=1404926499]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip/Card9/Inner" unique_id=1567806250]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BumperBottom" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E2 Clip/E2Strip" unique_id=1170345223]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="E1 Clip" type="Container" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=1970702643]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("3_s4vy2")
+metadata/_custom_type_script = "uid://b2vfrcexvw703"
+
+[node name="E1Strip" type="VBoxContainer" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip" unique_id=795907907]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="BumperTop" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=873972864]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Card0" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1142220680]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card0" unique_id=627901441]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card0/Inner" unique_id=862157750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card1" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1954342021]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card1" unique_id=340249873]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card1/Inner" unique_id=275413003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=488250057]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card2" unique_id=479971487]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card2/Inner" unique_id=335167265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=2100666223]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card3" unique_id=1913118340]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card3/Inner" unique_id=1908655909]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card4" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1775401619]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card4" unique_id=1967141714]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card4/Inner" unique_id=1540114708]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card5" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=641605440]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card5" unique_id=1222225724]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card5/Inner" unique_id=499423999]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card6" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1971892441]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card6" unique_id=1654858184]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card6/Inner" unique_id=1403194820]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card7" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=573812286]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card7" unique_id=906980521]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card7/Inner" unique_id=960501765]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "7"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card8" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1493893839]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card8" unique_id=1179551481]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card8/Inner" unique_id=2058808944]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card9" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1584541542]
+custom_minimum_size = Vector2(40, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card9" unique_id=116265378]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip/Card9/Inner" unique_id=1651987607]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BumperBottom" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/E1 Clip/E1Strip" unique_id=1308202541]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Comma Panel" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=2001801390]
+custom_minimum_size = Vector2(11, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Comma Panel" unique_id=1881483643]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = ","
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="D2 Clip" type="Container" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=836289660]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("3_s4vy2")
+metadata/_custom_type_script = "uid://b2vfrcexvw703"
+
+[node name="D2Strip" type="VBoxContainer" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip" unique_id=594278494]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="BumperTop" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=622991763]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Card0" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=673269810]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card0" unique_id=753394456]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card0/Inner" unique_id=817775322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card1" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=1580466279]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card1" unique_id=1416808014]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card1/Inner" unique_id=582693220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=542609674]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card2" unique_id=2041097969]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card2/Inner" unique_id=926795163]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=995847809]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card3" unique_id=483891154]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card3/Inner" unique_id=380934104]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card4" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=1675386435]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card4" unique_id=1611215239]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card4/Inner" unique_id=830390939]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card5" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=1059762945]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card5" unique_id=983793859]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card5/Inner" unique_id=1209432430]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card6" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=1642475705]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card6" unique_id=1797526296]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card6/Inner" unique_id=1260983661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card7" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=20023295]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card7" unique_id=1282421674]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card7/Inner" unique_id=1035216702]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "7"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card8" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=1007357470]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card8" unique_id=1054778091]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card8/Inner" unique_id=2121424042]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card9" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=955271419]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card9" unique_id=649806491]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip/Card9/Inner" unique_id=1039493364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BumperBottom" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D2 Clip/D2Strip" unique_id=845989699]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="D1 Clip" type="Container" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=884995157]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("3_s4vy2")
+metadata/_custom_type_script = "uid://b2vfrcexvw703"
+
+[node name="D1Strip" type="VBoxContainer" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip" unique_id=125314732]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="BumperTop" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=1731455402]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Card0" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=1989734742]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card0" unique_id=1003408827]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card0/Inner" unique_id=1735503966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card1" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=1059615903]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card1" unique_id=503767862]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card1/Inner" unique_id=1611998169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=1046718703]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card2" unique_id=1317284456]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card2/Inner" unique_id=1212538154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=248388278]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card3" unique_id=1832502643]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card3/Inner" unique_id=712114336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card4" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=785301074]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card4" unique_id=1877887407]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card4/Inner" unique_id=1475268956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "4"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card5" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=683604305]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card5" unique_id=698614430]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card5/Inner" unique_id=608484614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card6" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=460465011]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card6" unique_id=1210392700]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card6/Inner" unique_id=527708102]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "6"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card7" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=1733831925]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card7" unique_id=289891250]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card7/Inner" unique_id=431196223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "7"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card8" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=126262720]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card8" unique_id=13060224]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card8/Inner" unique_id=1513049315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.5
+offset_bottom = 3.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "8"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card9" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=1602353798]
+custom_minimum_size = Vector2(32, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card9" unique_id=1033131320]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip/Card9/Inner" unique_id=1947180341]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "9"
+label_settings = ExtResource("5_328dw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BumperBottom" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/D1 Clip/D1Strip" unique_id=75277821]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Scalar Clip" type="Container" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer" unique_id=2133716601]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+script = ExtResource("3_s4vy2")
+metadata/_custom_type_script = "uid://b2vfrcexvw703"
+
+[node name="Scalar Strip" type="VBoxContainer" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip" unique_id=1565521794]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 0
+
+[node name="BumperTop" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1992893547]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Card0" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1580494253]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card0" unique_id=1755275254]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card0/Inner" unique_id=190534284]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "$"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card1" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=502556763]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card1" unique_id=1687528140]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card1/Inner" unique_id=1226134612]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "K"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card2" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=187666153]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card2" unique_id=478875346]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card2/Inner" unique_id=1548648167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "M"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card3" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1363798854]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card3" unique_id=1022407755]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card3/Inner" unique_id=1142959005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "B"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card4" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1055636463]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card4" unique_id=451632881]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card4/Inner" unique_id=1614945517]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "T"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card5" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1260098617]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card5" unique_id=350879582]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card5/Inner" unique_id=1754895762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5
+offset_top = -6.5
+offset_right = 2.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Qa"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card6" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=21537088]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card6" unique_id=590583661]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card6/Inner" unique_id=552970685]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Qi"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card7" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=111119788]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card7" unique_id=2024094808]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card7/Inner" unique_id=1056769263]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -6.5
+offset_right = 2.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sp"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card8" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1857677788]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card8" unique_id=2136748798]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card8/Inner" unique_id=415949875]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5
+offset_top = -6.5
+offset_right = 2.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Oc"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card9" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1320113536]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card9" unique_id=347836027]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card9/Inner" unique_id=490893631]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "N"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card10" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1020287292]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card10" unique_id=1784932048]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card10/Inner" unique_id=1495490933]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5
+offset_top = -6.5
+offset_right = 2.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dc"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card11" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1261613323]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card11" unique_id=270498870]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card11/Inner" unique_id=1107880417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.5
+offset_top = -6.5
+offset_right = 3.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "UD"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card12" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1582823014]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card12" unique_id=1446856661]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card12/Inner" unique_id=1603263350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.5
+offset_top = -6.5
+offset_right = 3.5
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DD"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Card13" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=798905440]
+custom_minimum_size = Vector2(50, 72)
+layout_mode = 2
+color = Color(0.7294118, 0.6509804, 0.48235294, 1)
+
+[node name="Inner" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card13" unique_id=1772995928]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.84313726, 0.78431374, 0.6509804, 1)
+
+[node name="Label" type="Label" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip/Card13/Inner" unique_id=1373351746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -6.5
+offset_right = 2.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "TD"
+label_settings = ExtResource("4_aicx1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BumperBottom" type="ColorRect" parent="TopBar/Contents/Money Odometer/Content/HBoxContainer/Scalar Clip/Scalar Strip" unique_id=1785020743]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+color = Color(0.55, 0.2915, 0.31735, 1)
+
+[node name="Frame" type="TextureRect" parent="TopBar/Contents/Money Odometer" unique_id=1019467617]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("6_x6mrw")
+
+[node name="Button" type="Button" parent="TopBar" unique_id=1148519786]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 28.0
+offset_right = 656.0
+offset_bottom = 155.88019
+icon = ExtResource("7_wshag")
+flat = true
+icon_alignment = 1
+
+[node name="BuildButton" type="Button" parent="." unique_id=1604008626]
+offset_left = 1792.0
+offset_top = 986.0
+offset_right = 1915.0
+offset_bottom = 1077.0
+theme = ExtResource("8_s4vy2")
+icon = ExtResource("9_aicx1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CancelButton" type="Button" parent="." unique_id=883944647]
+offset_left = 1790.0
+offset_top = 558.0
+offset_right = 1913.0
+offset_bottom = 649.0
+theme = ExtResource("8_s4vy2")
+icon = ExtResource("10_aicx1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardDeck" type="Control" parent="." unique_id=199727695]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 365.0
+offset_top = -265.0
+offset_right = -385.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("8_62fno")
+commit_distance = 300.0
+dock_distance = 180.0
+card_template = ExtResource("9_x6mrw")

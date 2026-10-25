@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://3o7ulyio5a8h"]
+
+[ext_resource type="Texture2D" uid="uid://dvne1881aps4l" path="res://scenes/main/gui/Card/Card.svg" id="1_she1j"]
+[ext_resource type="Script" uid="uid://buwdd8adtowaw" path="res://scenes/main/gui/Card/card.gd" id="2_f7t44"]
+[ext_resource type="Texture2D" uid="uid://rji52vag4w3u" path="res://sprites/combiner/front.png" id="3_a22ur"]
+
+[node name="Card" type="TextureRect" unique_id=45145219]
+offset_left = 60.0
+offset_top = -89.0
+offset_right = 340.0
+offset_bottom = 247.0
+texture = ExtResource("1_she1j")
+script = ExtResource("2_f7t44")
+
+[node name="Label" type="Label" parent="." unique_id=701279572]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 26.0
+offset_top = 18.0
+offset_right = 136.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 30
+text = "label"
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="." unique_id=886846203]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 193.0
+offset_top = 17.0
+offset_right = 263.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 30
+text = "price"
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1388353141]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 22.0
+offset_top = 88.0
+offset_right = 261.0
+offset_bottom = 306.0
+texture = ExtResource("3_a22ur")
+expand_mode = 2

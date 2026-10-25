@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://ba83fu2iknakt"]
+
+[ext_resource type="FontFile" uid="uid://dc60nmt3c63a7" path="res://scenes/main/gui/TopBar/MoneyOdometer/font/Agdasima-Bold.ttf" id="1_tjxdb"]
+
+[resource]
+font = ExtResource("1_tjxdb")
+font_size = 50
+font_color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+outline_color = Color(0.73, 0.73, 0.73, 1)

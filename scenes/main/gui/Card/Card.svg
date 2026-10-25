@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 280 335.575">
+  <defs>
+    <style>
+      .cls-1{fill:#b6a58b;stroke:#4d4d4d;stroke-width:3;stroke-miterlimit:10}
+      .cls-2{fill:none;stroke:#4d4d4d;stroke-miterlimit:10}
+      .cls-3{fill:#1f1f1f}
+    </style>
+  </defs>
+  <title>Artboard 1</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path d="M9.434 3.857 L270.862 3.857 C273.624 3.857 275.862 6.096 275.862 8.857 L275.862 318 C275.862 320.761 273.624 323 270.862 323 L9.434 323 C6.673 323 4.434 320.761 4.434 318 L4.434 8.857 C4.434 6.096 6.673 3.857 9.434 3.857 Z" class="cls-1"/>
+    <path d="M18.816 67.546 L264.912 67.546" class="cls-2"/>
+    <path d="M191.617 16.944 L264.912 16.944 L264.912 56.93 L191.617 56.93 Z" class="cls-3"/>
+    <path d="M23.994 87.082 L259.735 87.082 C261.944 87.082 263.735 88.873 263.735 91.082 L263.735 301.611 C263.735 303.82 261.944 305.611 259.735 305.611 L23.994 305.611 C21.785 305.611 19.994 303.82 19.994 301.611 L19.994 91.082 C19.994 88.873 21.785 87.082 23.994 87.082 Z" class="cls-3"/>
+  </g>
+</svg>
